@@ -1,11 +1,5 @@
 import random
 
-# dear revisor,
-# The task was immense fun and I went wild during my starting structure phase  :)
-# so never mind all the additional experiments I did along the way
-# #The mainly required code can be found within "negative_verb_keywords" :)
-
-
 prompt = "How do you do. Please tell me your problem (or 'q' to quit): "
 
 positive_keywords = ["happy", "wonderful", "joy", "joyful", "love", "excited"]
@@ -22,9 +16,6 @@ positive_replies = [
     "I'm happy to hear that!",
     "That must be wonderful!"
 ]
-
-# negative_verb_replies = [ ] # replaced by partial_response
-
 
 negative_adjective_replies = [
     "Why are you {word}",
@@ -49,7 +40,6 @@ no_response_replies = [
     "Can you elaborate on that?",
 ]
 
-# Improvements Swapping Pronouns
 def swap_pronouns(phrase):
     phrase = phrase.replace(" I ", " __you__ ")
     phrase = phrase.replace(" you ", " __i__ ")
@@ -87,7 +77,6 @@ while True:
             response_found = True
             break
 
-# The actual task
         elif word in negative_verb_keywords:
             start = problem.find(word)
             end = problem.find(".", start)
@@ -119,7 +108,6 @@ while True:
             print("It was the gardener, wasn't it?") #yeahh
             response_found = True
             break
-
 
 
     if not response_found:
